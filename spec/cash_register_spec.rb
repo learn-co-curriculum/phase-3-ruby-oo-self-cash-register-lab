@@ -16,11 +16,8 @@ describe 'CashRegister' do
 
   describe '#total' do
     it 'returns the current total' do
-      cash_register.total = 0
-      cash_register.add_item("football", 5.56)
-      cash_register.add_item("gloves", 15.99)
-
-      expect(cash_register.total).to eq(21.55)
+      cash_register.total = 100
+      expect(cash_register.total).to eq(100)
     end
   end
 

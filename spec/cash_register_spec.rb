@@ -50,9 +50,8 @@ describe 'CashRegister' do
     end
 
     context 'the cash register was not initialized with an employee discount' do
-      it 'says that there is no discount to apply' do
-        expect($stdout).to receive(:puts).with("There is no discount to apply.")
-        cash_register.apply_discount
+      it 'returns a string error message that there is no discount to apply' do
+        expect(cash_register.apply_discount).to eq("There is no discount to apply.")
       end
     end
   end

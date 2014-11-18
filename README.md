@@ -19,5 +19,9 @@ complex class at the end.
 
 Take it one step at a time!
 
+## Bonus
+
+Build a method called `void_last_transaction` that will remove the last transaction from the total. You'll need to make an additional attribute accessor and keep track of that last transaction amount somehow. Hint: in what method of the class are you working with an individual item?
+
 ## Resources
 * [Codecademy](http://www.codecademy.com/dashboard) - [Banking on Ruby](http://www.codecademy.com/courses/ruby-beginner-en-32cN3/0/1)

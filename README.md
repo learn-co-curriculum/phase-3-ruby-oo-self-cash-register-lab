@@ -1,8 +1,4 @@
----
-  tags: oop
-  language: ruby
-  resources: 1
----
+
 
 # Object Oriented Cash Register
 

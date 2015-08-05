@@ -1,10 +1,9 @@
 
-
 # Object Oriented Cash Register
 
 ## Description
 
-We're going to create an Object Oriented Cash Register than can add items of varying
+We're going to create an Object Oriented Cash Register that can add items of varying
 quantities and prices, calculate discounts, and keep track of what's been added to it.
 
 ## Instructions

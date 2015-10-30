@@ -74,11 +74,10 @@ describe 'CashRegister' do
     end
   end
 
-  # BONUS: uncomment out test to work on this part
-  # describe '#void_last_transaction' do
-  #   it 'subtracts the last transaction from the total' do
-  #     cash_register.add_item("tomato", 1.76)
-  #     expect{cash_register.void_last_transaction}.to change{cash_register.total}.by(-1.76)
-  #   end
-  # end
+  describe '#void_last_transaction' do
+    it 'subtracts the last transaction from the total' do
+      cash_register.add_item("tomato", 1.76)
+      expect{cash_register.void_last_transaction}.to change{cash_register.total}.by(-1.76)
+    end
+  end
 end

@@ -8,13 +8,17 @@
 
 ## Description
 
-We're going to create an Object Oriented Cash Register that can add items of varying quantities and prices, calculate discounts, and keep track of what's been added to it.
+We're going to create an Object Oriented Cash Register that can: 
+* Add items of varying quantities and prices
+* Calculate discounts
+* Keep track of what's been added to it
+* Void the last transaction
 
 ## Instructions
 
 **This is a test-driven lab!** You will need to read the spec file and the test output very carefully to solve this one. 
 
-**Hint:** Keep in mind that to call an instance method *inside* another instance method, we use the `self` keyword to refer to the instance on which we are operating. For example:
+**Hint #1:** Keep in mind that to call an instance method *inside* another instance method, we use the `self` keyword to refer to the instance on which we are operating. For example:
 
 ```ruby
 class Person
@@ -35,8 +39,6 @@ Follow along with the specs in `spec/cash_register_spec.rb`. They have been set 
 
 Take it one step at a time!
 
-## Bonus
 
-Build a method called `void_last_transaction` that will remove the last transaction from the total. You'll need to make an additional attribute accessor and keep track of that last transaction amount somehow. 
 
-**Hint:** In what method of the class are you working with an individual item?
+**Hint #2:** The `void_last_transaction` method will remove the last transaction from the total. You'll need to make an additional attribute accessor and keep track of that last transaction amount somehow. In what method of the class are you working with an individual item?

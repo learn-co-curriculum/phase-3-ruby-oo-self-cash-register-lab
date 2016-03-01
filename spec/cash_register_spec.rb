@@ -3,7 +3,7 @@ describe 'CashRegister' do
   let(:cash_register_with_discount) { CashRegister.new(20) }
 
   describe '::new' do
-    it 'sets an instance variable for @total on initialization to zero' do
+    it 'sets an instance variable @total on initialization to zero' do
       expect(cash_register.instance_variable_get(:@total)).to eq(0)
     end
 
@@ -81,3 +81,4 @@ describe 'CashRegister' do
     end
   end
 end
+

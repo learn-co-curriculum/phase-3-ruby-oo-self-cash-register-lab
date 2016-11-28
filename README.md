@@ -35,7 +35,7 @@ class Person
 end
 ```
 
-Follow along with the specs in `spec/cash_register_spec.rb`. They have been set to `--fail-fast`, so by completing one test at a time, you'll end up with a relatively complex class at the end.
+Follow along with the specs in `spec/cash_register_spec.rb`. Reading along with what the tests are looking for can be really helpful!
 
 Take it one step at a time!
 

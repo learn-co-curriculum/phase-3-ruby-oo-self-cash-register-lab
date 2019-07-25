@@ -74,7 +74,7 @@ describe 'CashRegister' do
     end
   end
 
-  describe '#void_last_item' do
+  describe '#void_last_transaction' do
     it 'subtracts the last item from the total' do
       cash_register.add_item("apple", 0.99)
       cash_register.add_item("tomato", 1.76)

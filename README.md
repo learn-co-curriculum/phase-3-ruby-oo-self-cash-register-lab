@@ -1,4 +1,4 @@
-# Object Oriented Cash Register
+# Cash Register Lab
 
 ## Objectives
 
@@ -9,6 +9,7 @@
 ## Description
 
 We're going to create an Object Oriented Cash Register that can:
+
 * Add items of varying quantities and prices
 * Calculate discounts
 * Keep track of what's been added to it
@@ -28,8 +29,8 @@ class Person
   attr_accessor :age
 
   def initialize(age = 0)
-    @age = age 
-  end 
+    @age = age
+  end
 
   def birthday
     self.age += 1
@@ -44,4 +45,3 @@ Take it one step at a time!
 **Hint #2:** The `apply_discount` requires some knowledge about working with an Integer versus a Float in Ruby. Note that `100.class` returns Integer while `100.0.class` returns Float.  Ruby provides methods for changing an object of type Integer to a Float and vice versa.
 
 **Hint #3:** The `void_last_transaction` method will remove the last transaction from the total. You'll need to make an additional attribute accessor and keep track of that last transaction amount somehow. In what method of the class are you working with an individual item?
-

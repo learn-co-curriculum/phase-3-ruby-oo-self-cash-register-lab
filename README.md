@@ -1,10 +1,10 @@
-# Cash Register Lab
+# OO Cash Register Lab
 
-## Objectives
+## Learning Goals
 
-1. Build a class with instance methods.
-2. Call instance methods inside of other instance methods.
-3. Use instance methods to track information pertinent to an instance of a class.
+- Build a class with instance methods.
+- Call instance methods inside of other instance methods.
+- Use instance methods to track information pertinent to an instance of a class.
 
 ## Description
 

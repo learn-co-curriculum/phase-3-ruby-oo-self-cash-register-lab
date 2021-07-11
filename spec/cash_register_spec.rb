@@ -2,12 +2,12 @@ describe 'CashRegister' do
   let(:cash_register) { CashRegister.new }
   let(:cash_register_with_discount) { CashRegister.new(20) }
 
-  describe '::new' do
+  describe '.new' do
     it 'sets an instance variable @total on initialization to zero' do
       expect(cash_register.instance_variable_get(:@total)).to eq(0)
     end
 
-    it 'optionally takes an employee discount on initialization' do
+    it 'takes one optional argument, an employee discount, on initialization' do
       expect(cash_register_with_discount.discount).to eq(20)
     end
   end
@@ -21,11 +21,11 @@ describe 'CashRegister' do
 
   describe '#add_item' do
     it 'accepts a title and a price and increases the total' do
-      expect{cash_register.add_item("eggs", 0.98)}.to change{cash_register.total}.by(0.98)
+      expect { cash_register.add_item("eggs", 0.98) }.to change(cash_register, :total).by(0.98)
     end
 
     it 'also accepts an optional quantity' do
-      expect{cash_register.add_item("book", 5.00, 3)}.to change{cash_register.total}.by(15.00)
+      expect { cash_register.add_item("book", 5.00, 3) }.to change(cash_register, :total).by(15.00)
     end
 
     it "doesn't forget about the previous total" do
@@ -39,7 +39,7 @@ describe 'CashRegister' do
   end
 
   describe '#apply_discount' do
-    context 'the cash register was initialized with an employee discount' do
+    context 'when the cash register was initialized with an employee discount' do
       it 'applies the discount to the total price' do
         cash_register_with_discount.add_item("macbook air", 1000)
         cash_register_with_discount.apply_discount
@@ -54,11 +54,11 @@ describe 'CashRegister' do
       it 'reduces the total' do
         cash_register.total = 0
         cash_register_with_discount.add_item("macbook air", 1000)
-        expect{cash_register_with_discount.apply_discount}.to change{cash_register_with_discount.total}.by(-200)
+        expect { cash_register_with_discount.apply_discount }.to change(cash_register_with_discount, :total).by(-200)
       end
     end
 
-    context 'the cash register was not initialized with an employee discount' do
+    context 'when the cash register was not initialized with an employee discount' do
       it 'returns a string error message that there is no discount to apply' do
         expect(cash_register.apply_discount).to eq("There is no discount to apply.")
       end
@@ -66,11 +66,22 @@ describe 'CashRegister' do
   end
 
   describe '#items' do
-    it 'returns an array containing all items that have been added' do
-      new_register = CashRegister.new
-      new_register.add_item("eggs", 1.99)
-      new_register.add_item("tomato", 1.76, 3)
-      expect(new_register.items).to eq(["eggs", "tomato", "tomato", "tomato"])
+    context 'when called with two arguments' do
+      it 'returns an array containing all items that have been added' do
+        new_register = CashRegister.new
+        new_register.add_item("eggs", 1.99)
+        new_register.add_item("tomato", 1.76)
+        expect(new_register.items).to eq(["eggs", "tomato"])
+      end
+    end
+
+    context 'when called with three arguments' do
+      it 'returns an array containing all items that have been added, including multiples' do
+        new_register = CashRegister.new
+        new_register.add_item("eggs", 1.99, 2)
+        new_register.add_item("tomato", 1.76, 3)
+        expect(new_register.items).to eq(["eggs", "eggs", "tomato", "tomato", "tomato"])
+      end
     end
   end
 
@@ -84,7 +95,7 @@ describe 'CashRegister' do
 
     it 'returns the total to 0.0 if all items have been removed' do
       cash_register.add_item("tomato", 1.76, 2)
-      expect{cash_register.void_last_transaction}.to change{cash_register.total}.from(3.52).to(0.0)
+      expect { cash_register.void_last_transaction }.to change(cash_register, :total).from(3.52).to(0.0)
     end
   end
 end
